@@ -14,12 +14,15 @@ def main():
         text_to_translate = input(
             "Please enter the text that you want to encode/decode: "
         )
-        encode_text(num_of_spaces_to_shift_by, text_to_translate)
+        encode_text(text_to_translate, num_of_spaces_to_shift_by)
     else:
         return "Exiting the program now"
         exit()
 
-def encode_text(num_of_spaces_to_shift_by, text_to_translate):
+
+def encode_text(text_to_translate, num_of_spaces_to_shift_by):
+    raise NotImplementedError
+
 
 # This calculates the spaces to shift the alphabet by
 def calc_spaces_to_shift_by(known_letter, replacement_letter):

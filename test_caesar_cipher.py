@@ -3,8 +3,8 @@ import unittest
 import mock
 from mock import patch
 from caesar_cypher import main
-from caesar_cypher import calc_spaces_to_shift_by
-from caesar_cypher import output_letter
+from caesar_cypher import calc_spaces_to_shift_by, output_letter, encode_text
+
 
 # Tests that check whether it is able to calculate the spaces which we need to shift the letters by
 class test_spaces_to_shift_by(unittest.TestCase):
@@ -35,6 +35,13 @@ class test_outputted_letters(unittest.TestCase):
     def test_correct_letter_is_outputted_when_a_cycle_needs_to_be_performed(self):
         expected = "c"
         actual = output_letter("z", 3)
+        self.assertEqual(actual, expected)
+
+
+class test_encode_text(unittest.TestCase):
+    def test_it_outputs_correct_text(self):
+        expected = "bcde"
+        actual = encode_text("abcd", 1)
         self.assertEqual(actual, expected)
 
 
