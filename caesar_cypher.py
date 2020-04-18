@@ -16,8 +16,10 @@ def main():
 
 # This calculates the spaces to shift the alphabet by
 def calc_spaces_to_shift_by(known_letter, replacement_letter):
-    spaces_to_shift = abs(ord(known_letter) - ord(replacement_letter))
-    return spaces_to_shift
+    if ord(known_letter) <= ord(replacement_letter):
+        return abs(ord(known_letter) - ord(replacement_letter))
+    else:
+        return (ord("z") - ord(known_letter)) + (ord(replacement_letter) - ord("a") + 1)
 
 
 if __name__ == "__main__":

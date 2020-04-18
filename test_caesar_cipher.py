@@ -12,9 +12,15 @@ class test_spaces_to_shift_by(unittest.TestCase):
         actual = calc_spaces_to_shift_by("a", "b")
         self.assertEqual(actual, expected)
 
-    def test_it_returns_positive_numbers(self):
+    # rename the test name to something more appropriate
+    def test_it_can_calculate_a_full_rotation(self):
         expected = 25
         actual = calc_spaces_to_shift_by("b", "a")
+        self.assertEqual(actual, expected)
+
+    def test_it_returns_correct_value_when_going_to_beginning_of_alphabet(self):
+        expected = 2
+        actual = calc_spaces_to_shift_by("z", "b")
         self.assertEqual(actual, expected)
 
 
