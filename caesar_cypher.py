@@ -4,11 +4,22 @@ def main():
         "This is a caesar cipher encoder/decoder. Do you wish to continue? Y/n"
     )
     if enter_alg == "" or enter_alg == "y" or enter_alg == "Y":
-        known_letter = input("Please enter a letter you'd like to replace")
+        known_letter = input("Please enter a letter you'd like to replace: ")
         replacement_letter = input(
-            "Now please enter the letter you'd like to replace it with"
+            "Now please enter the letter you'd like to replace it with: "
         )
-        calc_spaces_to_shift_by(known_letter, replacement_letter)
+        num_of_spaces_to_shift_by = calc_spaces_to_shift_by(
+            known_letter, replacement_letter
+        )
+        text_to_translate = input(
+            "Please enter the text that you want to encode/decode: "
+        )
+        # loop through text to translate each letter
+        encoded_text = ""
+        for letter in text_to_translate:
+            print(letter)
+            letter = output_letter(known_letter, output_letter)
+            encoded_text += letter
     else:
         return "Exiting the program now"
         exit()
