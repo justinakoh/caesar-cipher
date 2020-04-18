@@ -14,16 +14,12 @@ def main():
         text_to_translate = input(
             "Please enter the text that you want to encode/decode: "
         )
-        # loop through text to translate each letter
-        encoded_text = ""
-        for letter in text_to_translate:
-            print(letter)
-            letter = output_letter(known_letter, output_letter)
-            encoded_text += letter
+        encode_text(num_of_spaces_to_shift_by, text_to_translate)
     else:
         return "Exiting the program now"
         exit()
 
+def encode_text(num_of_spaces_to_shift_by, text_to_translate):
 
 # This calculates the spaces to shift the alphabet by
 def calc_spaces_to_shift_by(known_letter, replacement_letter):
