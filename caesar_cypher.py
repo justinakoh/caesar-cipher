@@ -21,6 +21,9 @@ def calc_spaces_to_shift_by(known_letter, replacement_letter):
     else:
         return (ord("z") - ord(known_letter)) + (ord(replacement_letter) - ord("a") + 1)
 
+#This will output the actual letter
+def output_letter(original_letter, num_of_spaces_to_shift_by):
+    raise NotImplementedError
 
 if __name__ == "__main__":
     main()

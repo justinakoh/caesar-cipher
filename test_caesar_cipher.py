@@ -4,8 +4,9 @@ import mock
 from mock import patch
 from caesar_cypher import main
 from caesar_cypher import calc_spaces_to_shift_by
+from caesar_cypher import output_letter
 
-
+#Tests that check whether it is able to calculate the spaces which we need to shift the letters by
 class test_spaces_to_shift_by(unittest.TestCase):
     def test_it_can_calculate_normal_difference(self):
         expected = 1
@@ -21,6 +22,18 @@ class test_spaces_to_shift_by(unittest.TestCase):
     def test_it_returns_correct_value_when_going_to_beginning_of_alphabet(self):
         expected = 2
         actual = calc_spaces_to_shift_by("z", "b")
+        self.assertEqual(actual, expected)
+
+#Test that check whether the correct letters are outputted
+class test_outputted_letters(unittest.TestCase):
+    def test_it_can_output_the_correct_letters(self):
+        expected = 'b'
+        actual = output_letter('a', 1)
+        self.assertEqual(actual, expected)
+
+    def test_correct_letter_is_outputted_when_a_cycle_needs_to_be_performed(self):
+        expected = 'c'
+        actual = output_letter('z', 3)
         self.assertEqual(actual, expected)
 
 
