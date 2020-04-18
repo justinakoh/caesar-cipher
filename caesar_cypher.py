@@ -21,7 +21,10 @@ def main():
 
 
 def encode_text(text_to_translate, num_of_spaces_to_shift_by):
-    raise NotImplementedError
+    encoded_text = ""
+    for letter in text_to_translate:
+        encoded_text += output_letter(letter, num_of_spaces_to_shift_by)
+    return encoded_text
 
 
 # This calculates the spaces to shift the alphabet by
