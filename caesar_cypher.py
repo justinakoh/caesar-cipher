@@ -14,7 +14,8 @@ def main():
         text_to_translate = input(
             "Please enter the text that you want to encode/decode: "
         )
-        encode_text(text_to_translate, num_of_spaces_to_shift_by)
+        text = encode_text(text_to_translate, num_of_spaces_to_shift_by)
+        print(text)
     else:
         return "Exiting the program now"
         exit()
