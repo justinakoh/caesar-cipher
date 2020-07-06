@@ -34,7 +34,9 @@ def encode_text(text_to_translate, num_of_spaces_to_shift_by):
 
 # This calculates the spaces to shift the alphabet by
 def calc_spaces_to_shift_by(known_letter, replacement_letter):
-    if ord(known_letter) <= ord(replacement_letter):
+    if known_letter == " ":
+        return 0
+    elif ord(known_letter) <= ord(replacement_letter):
         return abs(ord(known_letter) - ord(replacement_letter))
     else:
         return (ord("z") - ord(known_letter)) + (ord(replacement_letter) - ord("a") + 1)
@@ -42,8 +44,11 @@ def calc_spaces_to_shift_by(known_letter, replacement_letter):
 
 # This will output the actual letter
 def output_letter(original_letter, num_of_spaces_to_shift_by):
-    letter = chr((ord(original_letter) + num_of_spaces_to_shift_by)%122)
-    return letter;
+    if original_letter == " ":
+        return " "
+    else:
+        letter = chr((ord(original_letter) + num_of_spaces_to_shift_by)%122)
+        return letter;
     # number = ord(original_letter) + num_of_spaces_to_shift_by
     # if number <= 122:
     #     return chr(number)
