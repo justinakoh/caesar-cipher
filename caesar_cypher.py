@@ -1,4 +1,8 @@
-# This is a script to translate into and out of the caesar cypher. This is a simple subsitution cypher which involves substituting each letter in the message you want to be encoded, by substituting each letter by a specific number across
+# This is a script to translate into and out of the caesar cypher.
+# This is a simple subsitution cypher which involves substituting each letter
+# in the message you want to be encoded, by substituting each letter by a
+# specific number across
+
 def main():
     enter_alg = input(
         "This is a caesar cipher encoder/decoder. Do you wish to continue? Y/n"
@@ -17,7 +21,7 @@ def main():
         text = encode_text(text_to_translate, num_of_spaces_to_shift_by)
         print(text)
     else:
-        return "Exiting the program now"
+        # return "Exiting the program now"
         exit()
 
 
@@ -38,11 +42,13 @@ def calc_spaces_to_shift_by(known_letter, replacement_letter):
 
 # This will output the actual letter
 def output_letter(original_letter, num_of_spaces_to_shift_by):
-    number = ord(original_letter) + num_of_spaces_to_shift_by
-    if number <= 122:
-        return chr(number)
-    else:
-        return chr(ord("a") + (number - ord("z") - 1))
+    letter = chr((ord(original_letter) + num_of_spaces_to_shift_by)%122)
+    return letter;
+    # number = ord(original_letter) + num_of_spaces_to_shift_by
+    # if number <= 122:
+    #     return chr(number)
+    # else:
+    #     return chr(ord("a") + (number - ord("z") - 1))
 
 
 if __name__ == "__main__":

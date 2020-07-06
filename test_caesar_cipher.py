@@ -5,7 +5,6 @@ from mock import patch
 from caesar_cypher import main
 from caesar_cypher import calc_spaces_to_shift_by, output_letter, encode_text
 
-
 # Tests that check whether it is able to calculate the spaces which we need to shift the letters by
 class test_spaces_to_shift_by(unittest.TestCase):
     def test_it_can_calculate_normal_difference(self):
